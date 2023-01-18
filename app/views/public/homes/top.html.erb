@@ -1,0 +1,59 @@
+<div class="container px-5 px-sm-0">
+ <div class="row">
+     
+  <div class="col-md-3 mt-5">
+   <table class="table table-bordered border-primary">
+    <tr>
+      <td>name</td>
+    </tr>
+    
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+      <%= link_to user_path(user.id) do %>
+       <p><%= user.name %></p>
+      <% end %>
+      </td>
+    </tr>
+    <% end %>
+    
+  </table>      
+  </div>
+  
+  <div class="col-md-8 offset-md-1 mt-5">
+   
+   <span class="border border-primary">
+   ようこそ、ながのCAKEへ!
+   このサイトは、ケーキ販売のECサイトになります。
+   会員でない方も商品の閲覧はできますが、
+   購入には会員登録が必要になります。
+   </span>
+   
+   <div class="row">
+   <h2>新着商品</h2>
+   <table class="table">
+    <tr>
+     <% @books.each do |book| %>
+     <td>
+         <%= book.title %></br>
+         <%= book.body %>
+     </td>
+     <% end %>   
+    </tr>
+   </table> 
+   </div>
+   
+   <ul class="list-group list-group-horizontal">
+   <% @books.each do |book| %>
+   <li class="list-group-item">
+  　  <%= book.title %></br>
+     <%= book.body %>
+    </li>
+    <% end %> 
+   </ul>
+   
+  </div>
+  
+  
+ </div>
+</div>
